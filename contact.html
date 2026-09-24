@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="contact.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/logopic.jpg" type="image/png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4b4ade4766.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- BACKGROUND MUSIC                          -->
+    <!-- ========================================= -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- ========================================= -->
+    <!-- MUSIC CONTROL                             -->
+    <!-- ========================================= -->
+    <button id="musicButton" class="music-button" aria-label="Play background music" title="Play/Pause Music">
+        <i id="musicIcon" class="fas fa-volume-mute"></i>
+    </button>
+
+    <!-- ========================================= -->
+    <!-- NAVIGATION BAR                            -->
+    <!-- ========================================= -->
+    <nav class="navbar">
+
+        <!-- Logo -->
+        <div class="head">
+            <h1>
+                <a href="index.html">MJ</a>
+            </h1>
+        </div>
+
+        <!-- Hamburger -->
+        <div class="hamburger" aria-label="Open navigation menu">
+            &#9776;
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="navlink">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </nav>
+
+    <!-- ========================================= -->
+    <!-- HERO SECTION                              -->
+    <!-- ========================================= -->
+    <section class="bgpic">
+
+        <div class="content">
+
+            <h2>Get in Touch</h2>
+
+            <h4>
+                Have a question or planning an event? We'd love to hear from you. Reach out to us through any of the channels below or send us a direct message.
+            </h4>
+
+            <!-- MAIN BUTTONS -->
+            <div class="button1">
+                <div>
+                    <a href="book.html" class="book">Book Event</a>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- CONTACT SECTION                           -->
+    <!-- ========================================= -->
+    <div class="section">
+        <h3>Contact Information</h3>
+    </div>
+
+    <div class="service">
+
+        <div class="contact-container">
+
+            <!-- CONTACT CARDS -->
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                        <h4>Phone</h4>
+                        <p>+63 00000000</p>
+                
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>@gmail.com</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Location</h4>
+                    <a href="https://maps.app.goo.gl/G1HUBg8LstshBQrb9">
+                    <p>Camiling, Tarlac, Philippines</p></a>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fab fa-facebook-f"></i>
+                    <h4>Facebook</h4>
+                    <a href="https://www.facebook.com/Mark.Jumar.Mariano.06">
+                        <p>@jumar</p>
+                    </a>
+                </div>
+
+            </div>
+
+            
+        </div>
+
+    </div>
+     <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 MJ. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT                                -->
+    <!-- ========================================= -->
+    <script>
+        /* HAMBURGER MENU */
+        const hamburger = document.querySelector('.hamburger');
+        const navlink = document.querySelector('.navlink');
+
+        hamburger.addEventListener('click', () => {
+            navlink.classList.toggle('active');
+        });
+
+        /* BACKGROUND MUSIC */
+        const bgMusic = document.getElementById('bgMusic');
+        const musicButton = document.getElementById('musicButton');
+        const musicIcon = document.getElementById('musicIcon');
+
+        bgMusic.volume = 0.3;
+
+        function playMusic() {
+            bgMusic.play()
+                .then(() => {
+                    musicIcon.classList.remove('fa-volume-mute');
+                    musicIcon.classList.add('fa-volume-up');
+                    musicButton.setAttribute('aria-label', 'Pause background music');
+                })
+                .catch(() => {
+                    console.log('Browser blocked automatic music playback.');
+                });
+        }
+
+        function pauseMusic() {
+            bgMusic.pause();
+            musicIcon.classList.remove('fa-volume-up');
+            musicIcon.classList.add('fa-volume-mute');
+            musicButton.setAttribute('aria-label', 'Play background music');
+        }
+
+        musicButton.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                playMusic();
+            } else {
+                pauseMusic();
+            }
+        });
+
+        window.addEventListener('load', () => {
+            playMusic();
+        });
+
+        function startMusicAfterInteraction() {
+            if (bgMusic.paused) {
+                playMusic();
+            }
+        }
+
+        document.addEventListener('click', startMusicAfterInteraction, { once: true });
+        document.addEventListener('touchstart', startMusicAfterInteraction, { once: true });
+        document.addEventListener('keydown', startMusicAfterInteraction, { once: true });
+    </script>
+
+</body>
+
+</html>

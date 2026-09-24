@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | MJ</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="about.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/logopic.jpg" type="image/png">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4b4ade4766.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND MUSIC
+    ====================================================== -->
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <!-- =====================================================
+         MUSIC CONTROL
+    ====================================================== -->
+
+    <button
+        id="musicButton"
+        class="music-button"
+        aria-label="Play background music"
+        title="Play/Pause Music">
+
+        <i id="musicIcon" class="fas fa-volume-mute"></i>
+
+    </button>
+
+
+    <!-- =====================================================
+         NAVIGATION BAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <!-- Logo -->
+        <div class="head">
+            <h1>
+                <a href="index.html">MJ</a>
+            </h1>
+        </div>
+
+
+        <!-- Mobile Menu Button -->
+        <div
+            class="hamburger"
+            aria-label="Open navigation menu"
+            role="button">
+
+            &#9776;
+
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div class="navlink">
+
+            <a href="index.html">Home</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="about.html" class="active">About</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         ABOUT HERO
+    ====================================================== -->
+
+    <section class="bgpic">
+
+        <div class="content">
+
+            <p class="small-title">
+                GET TO KNOW ME
+            </p>
+
+            <h2>
+                About Me
+            </h2>
+
+            <p class="hero-description">
+                Welcome to my personal space. Here's a little
+                information about who I am, what I do, and what
+                I'm passionate about.
+            </p>
+
+            <a href="#about" class="scroll-button">
+                Discover More
+                <i class="fas fa-arrow-down"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT ME SECTION
+    ====================================================== -->
+
+    <section id="about" class="about-section">
+
+        <div class="about-container">
+
+
+            <!-- Profile Image -->
+            <div class="about-image">
+
+                <div class="image-frame">
+
+                    <img
+                        src="profile.jpg"
+                        alt="Photo of MJ">
+
+                </div>
+
+            </div>
+
+
+            <!-- About Text -->
+            <div class="about-content">
+
+                <p class="section-label">
+                    WHO I AM
+                </p>
+
+                <h3>
+                    Hello, I'm <span>MJ</span>
+                </h3>
+
+                <p>
+                    welcome blahblaj
+                </p>
+
+                
+
+                <!-- Personal Details -->
+                <div class="personal-details">
+
+                    <div class="detail-item">
+
+                        <i class="fas fa-user"></i>
+
+                        <div>
+                            <span>Name</span>
+                            <strong>Mark Jumar Samortin Mariano</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <i class="fas fa-map-marker-alt"></i>
+
+                        <div>
+                            <span>Location</span>
+                            <strong>Camiling, Tarlac</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                       <i class="fa-solid fa-brain"></i>
+
+                        <div>
+                            <span>Interest</span>
+                            <strong>Aesthetic and Design</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <i class="fas fa-heart"></i>
+
+                        <div>
+                            <span>Passion</span>
+                            <strong>Planning and Designing</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    
+
+
+    <!-- =====================================================
+         CONTACT / CONNECT SECTION
+    ====================================================== -->
+
+    <section class="contact-section">
+
+        <div class="contact-content">
+
+            <p class="section-label">
+                LET'S CONNECT
+            </p>
+
+            <h3>
+                Want to Know More?
+            </h3>
+
+            <p>
+                Feel free to get in touch with me through my
+                contact page or social media.
+            </p>
+
+            <a href="contact.html" class="contact-button">
+
+                Contact Me
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 MJ. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           HAMBURGER MENU
+        ================================================= */
+
+        const hamburger =
+            document.querySelector('.hamburger');
+
+        const navlink =
+            document.querySelector('.navlink');
+
+
+        hamburger.addEventListener('click', () => {
+
+            navlink.classList.toggle('active');
+
+        });
+
+
+
+        /* =================================================
+           CLOSE MOBILE MENU AFTER CLICKING A LINK
+        ================================================= */
+
+        const navLinks =
+            document.querySelectorAll('.navlink a');
+
+
+        navLinks.forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                navlink.classList.remove('active');
+
+            });
+
+        });
+
+
+
+        /* =================================================
+           BACKGROUND MUSIC
+        ================================================= */
+
+        const bgMusic =
+            document.getElementById('bgMusic');
+
+        const musicButton =
+            document.getElementById('musicButton');
+
+        const musicIcon =
+            document.getElementById('musicIcon');
+
+
+        bgMusic.volume = 0.3;
+
+
+        function playMusic() {
+
+            bgMusic.play()
+
+                .then(() => {
+
+                    musicIcon.classList.remove(
+                        'fa-volume-mute'
+                    );
+
+                    musicIcon.classList.add(
+                        'fa-volume-up'
+                    );
+
+                    musicButton.setAttribute(
+                        'aria-label',
+                        'Pause background music'
+                    );
+
+                })
+
+                .catch(() => {
+
+                    console.log(
+                        'Browser blocked automatic music playback.'
+                    );
+
+                });
+
+        }
+
+
+        function pauseMusic() {
+
+            bgMusic.pause();
+
+            musicIcon.classList.remove(
+                'fa-volume-up'
+            );
+
+            musicIcon.classList.add(
+                'fa-volume-mute'
+            );
+
+            musicButton.setAttribute(
+                'aria-label',
+                'Play background music'
+            );
+
+        }
+
+
+        musicButton.addEventListener(
+            'click',
+            () => {
+
+                if (bgMusic.paused) {
+
+                    playMusic();
+
+                } else {
+
+                    pauseMusic();
+
+                }
+
+            }
+        );
+
+
+        /* Try to start music */
+        window.addEventListener(
+            'load',
+            playMusic
+        );
+
+
+        /* Start after user interaction */
+        function startMusicAfterInteraction() {
+
+            if (bgMusic.paused) {
+
+                playMusic();
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            'click',
+            startMusicAfterInteraction,
+            { once: true }
+        );
+
+
+        document.addEventListener(
+            'touchstart',
+            startMusicAfterInteraction,
+            { once: true }
+        );
+
+
+        document.addEventListener(
+            'keydown',
+            startMusicAfterInteraction,
+            { once: true }
+        );
+
+    </script>
+
+</body>
+
+</html>

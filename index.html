@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jody SV Event Styling and Catering Services</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="mainstyle.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo/logopic.jpg" type="image/png">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <script
+        src="https://kit.fontawesome.com/4b4ade4766.js"
+        crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND MUSIC
+    ====================================================== -->
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <!-- =====================================================
+         MUSIC CONTROL
+    ====================================================== -->
+
+    <button
+        id="musicButton"
+        class="music-button"
+        aria-label="Play background music"
+        title="Play/Pause Music"
+    >
+        <i id="musicIcon" class="fas fa-volume-mute"></i>
+    </button>
+
+
+    <!-- =====================================================
+         NAVIGATION BAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <!-- LOGO -->
+        <div class="head">
+            <h1>
+                <a href="index.html">MJ</a>
+            </h1>
+        </div>
+
+
+        <!-- HAMBURGER BUTTON -->
+        <button
+            class="hamburger"
+            id="hamburger"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navlink"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+
+        <!-- NAVIGATION LINKS -->
+        <div class="navlink" id="navlink">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section class="bgpic">
+
+        <div class="content">
+
+            <h2>
+                Turning Moments Into Beautiful Memories
+            </h2>
+
+
+            <h4>
+                From intimate gatherings to grand celebrations,
+                we bring your vision to life with creativity and style.
+            </h4>
+
+
+            <h4>
+                Affordable elegance in catering, styling,
+                and event coordination.
+            </h4>
+
+
+            <!-- MAIN BUTTONS -->
+
+            <div class="button1">
+
+                <div>
+                    <a
+                        href="book.html"
+                        class="book"
+                    >
+                        Book Now
+                    </a>
+                </div>
+
+
+                <div>
+                    <a
+                        href="viewp.html"
+                        class="viewp"
+                    >
+                        Packages
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES TITLE
+    ====================================================== -->
+
+    <div class="section">
+
+        <h3>
+            Our Services
+        </h3>
+
+    </div>
+
+
+    <!-- =====================================================
+         SERVICES / GALLERY
+    ====================================================== -->
+
+    <div class="gallery-section">
+
+        <div
+            class="gallery"
+            id="birthdayGallery"
+        >
+
+            <!-- PHOTO 1 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="pic1.webp"
+                    alt="Birthday Event 1"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="pic2.webp"
+                    alt="Birthday Event 2"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="pic2.webp"
+                    alt="Birthday Event 3"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 4 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="pic2.webp"
+                    alt="Birthday Event 4"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 5 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="pic2.webp"
+                    alt="Birthday Event 5"
+                >
+
+            </div>
+
+
+            <!-- PHOTO 6 -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="pic2.webp"
+                    alt="Birthday Event 6"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 MJ. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           HAMBURGER MENU
+        ================================================= */
+
+        const hamburger = document.getElementById("hamburger");
+        const navlink = document.getElementById("navlink");
+
+
+        hamburger.addEventListener("click", function () {
+
+            /* Toggle menu */
+
+            navlink.classList.toggle("active");
+
+
+            /* Check if menu is open */
+
+            const menuOpen =
+                navlink.classList.contains("active");
+
+
+            /* Update accessibility */
+
+            hamburger.setAttribute(
+                "aria-expanded",
+                menuOpen
+            );
+
+
+            hamburger.setAttribute(
+                "aria-label",
+                menuOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+
+            /* Change hamburger icon */
+
+            if (menuOpen) {
+
+                hamburger.innerHTML =
+                    '<i class="fas fa-times"></i>';
+
+            } else {
+
+                hamburger.innerHTML =
+                    '<i class="fas fa-bars"></i>';
+
+            }
+
+        });
+
+
+        /* =================================================
+           CLOSE MENU WHEN LINK IS CLICKED
+        ================================================= */
+
+        const navLinks =
+            document.querySelectorAll(".navlink a");
+
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navlink.classList.remove("active");
+
+
+                hamburger.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+
+                hamburger.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+
+                hamburger.innerHTML =
+                    '<i class="fas fa-bars"></i>';
+
+            });
+
+        });
+
+
+        /* =================================================
+           CLOSE MENU WHEN CLICKING OUTSIDE
+        ================================================= */
+
+        document.addEventListener("click", function (event) {
+
+            const clickedInsideNavbar =
+                event.target.closest(".navbar");
+
+
+            if (!clickedInsideNavbar) {
+
+                navlink.classList.remove("active");
+
+
+                hamburger.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+
+                hamburger.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+
+                hamburger.innerHTML =
+                    '<i class="fas fa-bars"></i>';
+
+            }
+
+        });
+
+
+        /* =================================================
+           CLOSE MENU WHEN WINDOW GETS BIGGER
+        ================================================= */
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 768) {
+
+                navlink.classList.remove("active");
+
+
+                hamburger.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+
+                hamburger.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+
+                hamburger.innerHTML =
+                    '<i class="fas fa-bars"></i>';
+
+            }
+
+        });
+
+
+        /* =================================================
+           BACKGROUND MUSIC
+        ================================================= */
+
+        const bgMusic =
+            document.getElementById("bgMusic");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+        const musicIcon =
+            document.getElementById("musicIcon");
+
+
+        /* Set music volume */
+
+        bgMusic.volume = 0.3;
+
+
+        /* =================================================
+           PLAY MUSIC
+        ================================================= */
+
+        function playMusic() {
+
+            bgMusic.play()
+
+                .then(function () {
+
+                    musicIcon.classList.remove(
+                        "fa-volume-mute"
+                    );
+
+                    musicIcon.classList.add(
+                        "fa-volume-up"
+                    );
+
+
+                    musicButton.setAttribute(
+                        "aria-label",
+                        "Pause background music"
+                    );
+
+                })
+
+                .catch(function () {
+
+                    console.log(
+                        "Browser blocked automatic music playback."
+                    );
+
+                });
+
+        }
+
+
+        /* =================================================
+           PAUSE MUSIC
+        ================================================= */
+
+        function pauseMusic() {
+
+            bgMusic.pause();
+
+
+            musicIcon.classList.remove(
+                "fa-volume-up"
+            );
+
+
+            musicIcon.classList.add(
+                "fa-volume-mute"
+            );
+
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Play background music"
+            );
+
+        }
+
+
+        /* =================================================
+           MUSIC BUTTON
+        ================================================= */
+
+        musicButton.addEventListener(
+            "click",
+            function (event) {
+
+                /* Prevent outside-click logic */
+
+                event.stopPropagation();
+
+
+                if (bgMusic.paused) {
+
+                    playMusic();
+
+                } else {
+
+                    pauseMusic();
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           TRY TO START MUSIC
+        ================================================= */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                playMusic();
+
+            }
+        );
+
+
+        /* =================================================
+           START MUSIC AFTER USER INTERACTION
+        ================================================= */
+
+        function startMusicAfterInteraction() {
+
+            if (bgMusic.paused) {
+
+                playMusic();
+
+            }
+
+        }
+
+
+        document.addEventListener(
+            "click",
+            startMusicAfterInteraction,
+            { once: true }
+        );
+
+
+        document.addEventListener(
+            "touchstart",
+            startMusicAfterInteraction,
+            { once: true }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            startMusicAfterInteraction,
+            { once: true }
+        );
+
+    </script>
+
+</body>
+
+</html>
