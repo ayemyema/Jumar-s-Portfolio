@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jody SV Event Styling and Catering Services</title>
+    <title>MJ Event Styling</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="stylesheet" href="css/mainstyle.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/logo/logopic.jpg" type="image/png">
+    <link rel="icon" href="assets/images/site/logo.jpg" type="image/jpeg">
 
     <!-- Google Font -->
     <link
@@ -33,7 +33,7 @@
     ====================================================== -->
 
     <audio id="bgMusic" loop preload="auto">
-        <source src="background.mp3" type="audio/mpeg">
+        <source src="assets/audio/Mozart.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -86,11 +86,11 @@
                 Home
             </a>
 
-            <a href="contact.html">
+            <a href="pages/contact.html">
                 Contact
             </a>
 
-            <a href="about.html">
+            <a href="pages/about.html">
                 About
             </a>
 
@@ -152,11 +152,22 @@
         <div class="birthday">
             
             <h4>
-                <a href="birthday.html">Birthday Parties</a>
+                <a href="pages/birthday.html">Birthday/Christening Parties</a>
             </h4>
 
         </div>
-      
+
+    </div>
+
+    <div class="gallery-section">
+
+        <div class="birthday">
+            
+            <h4>
+                <a href="pages/wedding.html">Wedding </a>
+            </h4>
+
+        </div>
 
     </div>
 
@@ -188,7 +199,9 @@
         const navlink = document.getElementById("navlink");
 
 
-        hamburger.addEventListener("click", function () {
+        hamburger.addEventListener("click", function (event) {
+
+            event.stopPropagation();
 
             /* Toggle menu */
 
